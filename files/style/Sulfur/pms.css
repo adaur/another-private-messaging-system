@@ -1,0 +1,39 @@
+/****************************************
+CSS system for Private Messaging System
+Copied from New Private Messaging System
+by Visman, you can thank him!
+****************************************/
+
+#punpms_inbox .pagepost, #punpms_view .pagepost {
+	overflow: hidden;
+}
+
+#punpms_inbox .block2col .blocktable, #punpms_view .block2col .blocktable {
+	margin-bottom: 0px;
+}
+
+#punpms_inbox .block2col .blocktable .inbox, #punpms_inbox .block2col .blockpost .inbox, #punpms_view .block2col .blocktable .inbox, #punpms_view .block2col .blockpost .inbox {
+	padding: 0;
+}
+
+#punpms_inbox .block2col #posterror, #punpms_inbox .block2col #postform, #punpms_view .block2col #posterror, #punpms_view .block2col #postform {
+	margin-bottom: 6px;
+}
+
+#punpms_inbox .block2col #infono, #punpms_view .block2col #infono{
+	padding-bottom: 0px;
+}
+
+div#mp_bar_ext {
+	border: 1px solid #B84623;
+	width: 100px;
+	height: 10px;
+	text-align: right;
+	display:inline-block; 
+}
+
+div#mp_bar_int {
+	background-color: #B84623;
+	height: 10px;
+	display:block; 
+}
