@@ -148,6 +148,33 @@ function install()
 			'PRIMARY KEY'		=> array('id'),
 	);
 	
+	$schema_sending_lists = array(
+			'FIELDS'			=> array(
+					'id'				=> array(
+							'datatype'			=> 'SERIAL',
+							'allow_null'    	=> false
+					),
+					'user_id'			=> array(
+							'datatype'			=> 'INT(10)',
+							'allow_null'		=> false,
+							'default'			=> '0'
+					),
+					'array_id'			=> array(
+							'datatype'			=> 'VARCHAR(255)',
+							'allow_null'		=> false,
+					),
+					'name'				=> array(
+							'datatype'			=> 'VARCHAR(255)',
+							'allow_null'		=> false,
+					),
+					'receivers	'		=> array(
+							'datatype'			=> 'VARCHAR(255)',
+							'allow_null'		=> false,
+					),
+			),
+			'PRIMARY KEY'		=> array('id'),
+	);
+	
 	$check_installation = $db->query('SELECT 1 FROM '.$db->prefix.'messages');
 	if (!$db->num_rows($check_installation)) // There is nothing in the table "messages": perform a full installation
 	{
@@ -181,6 +208,11 @@ function install()
 			$db->add_field('users', 'notify_pm_full', 'TINYINT(1)', false, '0', 'notify_with_post') or error('Unable to add column "num_pms" to table "users"', __FILE__, __LINE__, $db->error());
 	}
 	
+	$check_sending_lists = $db->query('SHOW TABLES LIKE "'.$db->prefix.'sending_lists"');
+	
+	if (!$db->num_rows($check_sending_lists)) // If the sending_lists table doesn't exist, create it
+		$db->create_table('sending_lists', $schema_sending_lists) or error('Unable to create table "sending_lists"', __FILE__, __LINE__, $db->error());
+	
 	// Regenerate the config cache
     if (!defined('FORUM_CACHE_FUNCTIONS_LOADED'))
         require PUN_ROOT.'include/cache.php';
@@ -196,6 +228,8 @@ function restore()
 	$db->drop_table('messages') or error('Unable to drop table "messages"', __FILE__, __LINE__, $db->error());
 	
 	$db->drop_table('contacts') or error('Unable to drop table "contacts"', __FILE__, __LINE__, $db->error());
+	
+	$db->drop_table('sending_lists') or error('Unable to drop table "sending_lists"', __FILE__, __LINE__, $db->error());
 	
 	$db->drop_field('groups', 'g_pm') or error('Unable to drop column "g_pm" from table "groups"', __FILE__, __LINE__, $db->error());
 	
