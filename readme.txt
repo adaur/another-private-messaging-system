@@ -6,12 +6,15 @@
 ##  Works on FluxBB:  1.5.0, 1.5.1, 1.5.2, 1.5.3
 ##     Release date:  2013-05-11
 ##           Author:  adaur (adaur.underground@gmail.com)
+##      FluxBB repo:  https://fluxbb.org/resources/mods/another-private-messaging-system
+##      GitHub repo:  https://github.com/adaur/another-private-messaging-system
+##  English support:  https://fluxbb.org/forums/viewtopic.php?id=4315
+##   French support:  http://fluxbb.fr/forums/viewtopic.php?id=10824
 ##		  
-##         Thanks to: jojaba (jojaba@gmail.com) : help for 1 click installation
-##         			  Otomatic : Mod Installer (1 click installation)
-##         			  vin100 (vin100@forx.fr) : old PM messaging style
-## 					  Connorhd (connorhd@mypunbb.com) : same
-##					  David Djurbäck (chacmool@spray.se) : same
+##         Thanks to: jojaba (1 click installation)
+##         			  Otomatic (Mod Installer)
+##         			  vin100, Connorhd, David Djurbäck (old PM messaging style)
+##                    All testers from FluxBB.org/fr :)
 ##
 ##      Description:  Private Messaging System for FluxBB.
 ##					  Messages are displayed as topics.
@@ -82,7 +85,7 @@ install_mod.php
 install_mod.php
 
 #
-#---------[ 2. GO TO ]----------------------------------------------
+#---------[ 4. GO TO ]----------------------------------------------
 #
 
 Go to the plugin administration page and launch Mod Installer.
