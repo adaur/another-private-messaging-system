@@ -118,10 +118,27 @@ $lang_pms = array(
 'Delete contact confirm'=>	'Weet u zeker dat u dit contact wilt verwijderen?',
 'Deleted contact redirect'=>	'Contact verwijderd. Doorsturen...',
 
+// Sending lists
+'List name'    =>    'Lijstnaam',
+'List usernames'    =>    'Lijst gebruikersnamen',
+'No sending lists'    =>    'Do not send lijsten',
+'Add a list'    =>    'Voeg een lijst toe',
+'Multidelete lists'    =>    'Verwijder meerdere lijsten',
+'Delete list confirm'    =>    'Weet u zeker dat u deze lijst wilt
+verwijderen?',
+'Delete lists comply'    =>    'Weet u zeker dat u de geselecteerde
+lijsten wilt verwijderen?',
+'Deleted list redirect'    =>    'Lijsten verwijderd. Redirecting...',
+'Must select lists'    =>    'U moet minstens 1 lijst selecteren',
+'Select a list'    =>    'Selecteer een lijst',
+'Delete this list'    =>    'Verwijder deze lijst',
+'List usernames comma'    =>    'Lijst gebruikersnamen (komma gescheiden)',
+'JS required'    =>    'JavaScript is een vereiste om gebruik te kunnen maken van lijsten.',
+
 // profil.php
-'use_pm_option'			=>	'Activeer private messaging systeem',
-'email_option_infos'	=>	'Met deze optie geactiveerd, wordt er bij ieder nieuw bericht een e-mail verstuurd.',
-'email_option'			=>	'Private message notificatie via e-mail',
-'email_option_full'		=>	'Voeg berichtinhoud bij',
+'use_pm_option'    =>    'Activeer private message systeem',
+'email_option_infos'    =>    'Met deze optie geactiveerd, ontvangt u een mail voor ieder nieuw bericht.',
+'email_option'    =>    'Private message notificatie via e-mail',
+'email_option_full'    =>    'Voeg berichtinhoud bij in e-mail',
 
 );
