@@ -179,7 +179,7 @@ if (isset($_POST['add']))
 		$authorized = 1;
 	}
 	
-	$result = $db->query('SELECT u.id, u.username, g.g_id, g.g_pm, COUNT(c.id) AS allready FROM '.$db->prefix.'users AS u INNER JOIN '.$db->prefix.'groups AS g ON u.group_id=g.g_id LEFT JOIN '.$db->prefix.'contacts AS c ON (c.contact_id=u.id AND c.user_id='.$pun_user['id'].') WHERE u.id!=1 AND '.$sql_where.' GROUP BY u.id') or error('Unable to find the informations of the user', __FILE__, __LINE__, $db->error());
+	$result = $db->query("SELECT u.id, u.username, g.g_id, g.g_pm, COUNT(c.id) AS allready FROM ".$db->prefix."users AS u INNER JOIN ".$db->prefix."groups AS g ON u.group_id=g.g_id LEFT JOIN ".$db->prefix."contacts AS c ON (c.contact_id=u.id AND c.user_id=".$pun_user['id'].") WHERE u.id!=1 AND ".$sql_where." GROUP BY u.id, g.g_id") or error("Unable to find the informations of the user", __FILE__, __LINE__, $db->error());
 	
 	if ($contact = $db->fetch_assoc($result))
 	{		

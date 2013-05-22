@@ -167,7 +167,7 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 	foreach ($dest_list as $destinataire)
 	{
 		// Get receiver infos
-		$result_username = $db->query('SELECT u.id, u.username, u.email, u.notify_pm, u.notify_pm_full, u.use_pm, u.num_pms, g.g_id, g.g_pm_limit, c.allow_msg FROM '.$db->prefix.'users AS u INNER JOIN '.$db->prefix.'groups AS g ON u.group_id=g.g_id LEFT JOIN '.$db->prefix.'messages AS pm ON pm.owner=u.id LEFT JOIN '.$db->prefix.'contacts AS c ON (c.user_id=u.id AND c.contact_id='.$pun_user['id'].') WHERE u.id!=1 AND u.username=\''.$db->escape($destinataire).'\' GROUP BY u.username') or error('Unable to get user ID', __FILE__, __LINE__, $db->error());
+		$result_username = $db->query("SELECT u.id, u.username, u.email, u.notify_pm, u.notify_pm_full, u.use_pm, u.num_pms, g.g_id, g.g_pm_limit, c.allow_msg FROM ".$db->prefix."users AS u INNER JOIN ".$db->prefix."groups AS g ON (u.group_id=g.g_id) LEFT JOIN ".$db->prefix."messages AS pm ON (pm.owner=u.id) LEFT JOIN ".$db->prefix."contacts AS c ON (c.user_id=u.id AND c.contact_id='".$pun_user['id']."') WHERE u.id!=1 AND u.username='".$db->escape($destinataire)."' GROUP BY u.username, u.id, g.g_id, c.allow_msg") or error("Unable to get user ID", __FILE__, __LINE__, $db->error());
 		// List users infos
 		if ($destinataires[$i] = $db->fetch_assoc($result_username))
 		{

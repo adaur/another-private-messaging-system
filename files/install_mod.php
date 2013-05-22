@@ -62,7 +62,7 @@ function install()
 							'default'		=> '0'
 					),
 					'owner'		=> array(
-							'datatype'			=> 'VARCHAR(255)',
+							'datatype'			=> 'INTEGER',
 							'allow_null'		=> false,
 							'default'		=> '0'
 					),
