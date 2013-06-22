@@ -14,7 +14,7 @@ $mod_config = array (
     3 => '1.5.3',
   ),
   'date_install' => 0,
-  'mod_status' => 1,
+  'mod_status' => 0,
   'mod_abbr' => 'APMS',
 );
 
