@@ -132,6 +132,7 @@ $lang_pms = array(
 'Delete this list'		=>	'Supprimer cette liste',
 'List usernames comma'	=>	'Liste des noms d\'utilisateur (séparés par des virgules)',
 'JS required'			=>	'JavaScript est nécessaire pour utiliser les listes d\'envoi.',
+'Yourself'				=>	'Vous ne pouvez pas vous inclure dans une liste d\'envoi.',
 
 // profile.php
 'use_pm_option'			=>	'Activer la messagerie privée',

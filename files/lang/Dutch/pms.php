@@ -134,6 +134,7 @@ lijsten wilt verwijderen?',
 'Delete this list'    =>    'Verwijder deze lijst',
 'List usernames comma'    =>    'Lijst gebruikersnamen (komma gescheiden)',
 'JS required'    =>    'JavaScript is een vereiste om gebruik te kunnen maken van lijsten.',
+'Yourself'				=>	'Du kan ikke tilføje dig selv til en liste.',
 
 // profil.php
 'use_pm_option'    =>    'Activeer private message systeem',

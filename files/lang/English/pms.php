@@ -132,6 +132,7 @@ $lang_pms = array(
 'Delete this list'		=>	'Delete this list',
 'List usernames comma'	=>	'List usernames (separated by commas)',
 'JS required'			=>	'JavaScript is required in order to use the sending lists.',
+'Yourself'				=>	'You cannot add yourself to a sending list.',
 
 // profile.php
 'use_pm_option'			=>	'Enable privates messages system',
