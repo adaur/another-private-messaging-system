@@ -39,10 +39,12 @@ $insert_add_file['profile'] = array(
 
 $search_add_file['viewtopic'] = array(
   "u.email_setting, ",
+  "g.g_user_title, ",
   "\t\t\t\t\$user_contacts[] = '<span class=\"email\"><a href=\"misc.php?email='.\$cur_post['poster_id'].'\">'.\$lang_common['Email'].'</a></span>';",
 );
 $insert_add_file['viewtopic'] = array(
  "u.use_pm, ",
+ "g.g_pm, ",
   "\n\n\t\t\trequire PUN_ROOT.'plugins/apms/viewtopic_add1.php';\n",
 );
 
