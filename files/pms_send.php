@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C)2010-2013 adaur
- * Another Private Messaging System v3.0.5
+ * Another Private Messaging System v3.0.6
  * Based on work from Vincent Garnier, Connorhd and David 'Chacmool' Djurback
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
@@ -167,7 +167,7 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 	foreach ($dest_list as $destinataire)
 	{
 		// Get receiver infos
-		$result_username = $db->query("SELECT u.id, u.username, u.email, u.notify_pm, u.notify_pm_full, u.use_pm, u.num_pms, g.g_id, g.g_pm_limit, c.allow_msg FROM ".$db->prefix."users AS u INNER JOIN ".$db->prefix."groups AS g ON (u.group_id=g.g_id) LEFT JOIN ".$db->prefix."messages AS pm ON (pm.owner=u.id) LEFT JOIN ".$db->prefix."contacts AS c ON (c.user_id=u.id AND c.contact_id='".$pun_user['id']."') WHERE u.id!=1 AND u.username='".$db->escape($destinataire)."' GROUP BY u.username, u.id, g.g_id, c.allow_msg") or error("Unable to get user ID", __FILE__, __LINE__, $db->error());
+		$result_username = $db->query("SELECT u.id, u.username, u.email, u.notify_pm, u.notify_pm_full, u.use_pm, u.num_pms, g.g_id, g.g_pm_limit, g.g_pm, c.allow_msg FROM ".$db->prefix."users AS u INNER JOIN ".$db->prefix."groups AS g ON (u.group_id=g.g_id) LEFT JOIN ".$db->prefix."messages AS pm ON (pm.owner=u.id) LEFT JOIN ".$db->prefix."contacts AS c ON (c.user_id=u.id AND c.contact_id='".$pun_user['id']."') WHERE u.id!=1 AND u.username='".$db->escape($destinataire)."' GROUP BY u.username, u.id, g.g_id, c.allow_msg") or error("Unable to get user ID", __FILE__, __LINE__, $db->error());
 		// List users infos
 		if ($destinataires[$i] = $db->fetch_assoc($result_username))
 		{
@@ -176,7 +176,7 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 			// Begin to build usernames' list
 			$list_usernames[] = $destinataires[$i]['username'];
 			// Receivers enable PM ?
-			if (!$destinataires[$i]['use_pm'] == '1')
+			if (!$destinataires[$i]['use_pm'] == '1' || !$destinataires[$i]['g_pm'] == '1')
 				$errors[] = sprintf($lang_pms['User disable PM'], pun_htmlspecialchars($destinataire));			
 			// Check receivers boxes
 			elseif ($destinataires[$i]['g_id'] > PUN_GUEST && $destinataires[$i]['g_pm_limit'] != '0' && $destinataires[$i]['num_pms'] >= $destinataires[$i]['g_pm_limit'])
