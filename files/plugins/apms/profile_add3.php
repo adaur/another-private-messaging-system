@@ -1,5 +1,5 @@
 <?php
-if ($pun_config['o_pms_enabled'] == '1' && !$pun_user['is_guest'] && $pun_user['g_pm'] == '1' && $pun_user['use_pm'] == '1' && $user['use_pm'] == '1')
+if ($pun_config['o_pms_enabled'] == '1' && !$pun_user['is_guest'] && $pun_user['g_pm'] == '1' && $pun_user['use_pm'] == '1' && $user['use_pm'] == '1' && $user['g_pm'] == '1')
     {
         $pm_send_field = '<a href="pms_send.php?uid='.$id.'">'.$lang_pms['Quick message'].'</a>';
         $user_personal[] = '<dt>'.$lang_pms['PM'].'</dt>';
