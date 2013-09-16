@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C)2010-2013 adaur
- * Another Private Messaging System v3.0.5
+ * Another Private Messaging System v3.0.6
  * Based on work from Vincent Garnier, Connorhd and David 'Chacmool' Djurback
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
