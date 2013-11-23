@@ -2,9 +2,9 @@
 ##
 ##        Mod title:  Another Private Messaging-Topic System
 ##
-##      Mod version:  3.0.6
-##  Works on FluxBB:  1.5.4
-##     Release date:  2013-09-16
+##      Mod version:  3.0.7
+##  Works on FluxBB:  1.5.4, 1.5.5
+##     Release date:  2013-11-23
 ##           Author:  adaur (adaur.underground@gmail.com)
 ##      FluxBB repo:  https://fluxbb.org/resources/mods/another-private-messaging-system
 ##      GitHub repo:  https://github.com/adaur/another-private-messaging-system
@@ -58,8 +58,9 @@
 To update from previous version of Another Private Messaging-Topic System (before 3.0.0),
 please delete all modifications in your PHP files, then install this one.
 
-If you have 3.0.0/3.0.1/3.0.2/3.0.3/3.0.4/3.0.5 installed, uninstall it with Mod Installer,
-replace your old files by the new ones and launch the installation via Mod Installer.
+If you have 3.0.0/3.0.1/3.0.2/3.0.3/3.0.4/3.0.5/3.0.6 installed, uninstall it with
+Mod Installer, replace your old files by the new ones and launch the installation
+via Mod Installer.
 PLEASE run the install_mod (it is modified to keep the "messages" table untouched).
 
 
