@@ -2,8 +2,8 @@
 
 $installer_config = array (
   'plugin_name' => 'Modification Installer',
-  'version' => '1.0.13',
-  'release_date' => '2013-08-15',
+  'version' => '1.0.14',
+  'release_date' => '2013-11-18',
   'author' => 'Otomatic - Fluxbb.fr',
   'plugin_abbr' => 'MODINST',
   'fluxbb_versions' =>
@@ -16,6 +16,7 @@ $installer_config = array (
     5 => '1.5.2',
     6 => '1.5.3',
     7 => '1.5.4',
+    8 => '1.5.5',
    ),
 );
 

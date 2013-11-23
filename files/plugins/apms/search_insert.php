@@ -1,6 +1,6 @@
 <?php
 
-/* ***** Another Private Messaging - Topic System by adaur 3.0.6 - APMS ***** */
+/* ***** Another Private Messaging - Topic System by adaur 3.0.7 - APMS ***** */
 
 /* Files to be modified by inserting strings into */
 $files_to_insert = array('header.php', 'profile.php');

@@ -5,13 +5,13 @@
 
 // Some info about your mod.
 $mod_title      = 'Another Private Messaging/Topic System';
-$mod_version    = '3.0.6';
-$release_date   = '2013-09-16';
+$mod_version    = '3.0.7';
+$release_date   = '2013-11-23';
 $author         = 'adaur';
 $author_email   = 'adaur.underground@gmail.com';
 
 // Versions of FluxBB this mod was created for. A warning will be displayed, if versions do not match
-$fluxbb_versions= array('1.5.4');
+$fluxbb_versions= array('1.5.4', '1.5.5');
 
 // Set this to false if you haven't implemented the restore function (see below)
 $mod_restore	= true;

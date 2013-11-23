@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C)2010 adaur
- * Another Private Messaging System v3.0.6
+ * Another Private Messaging System v3.0.7
  * Based on work from Vincent Garnier, Connorhd and David 'Chacmool' Djurback
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
@@ -12,7 +12,7 @@ if (!defined('PUN'))
 
 // Tell admin_loader.php that this is indeed a plugin and that it is loaded
 define('PUN_PLUGIN_LOADED', 1);
-define('PLUGIN_VERSION', '3.0.6');
+define('PLUGIN_VERSION', '3.0.7');
 define('PLUGIN_URL', 'admin_loader.php?plugin=AP_Private_messaging.php');
 
 // Load language file
