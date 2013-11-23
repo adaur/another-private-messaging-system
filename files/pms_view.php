@@ -52,7 +52,7 @@ if ($pid)
 	$id = $db->result($result);
 
 	// Determine on what page the post is located (depending on $pun_user['disp_posts'])
-	$result = $db->query('SELECT id FROM '.$db->prefix.'messages WHERE shared_id='.$id.' ORDER BY posted') or error('Unable to fetch post info', __FILE__, __LINE__, $db->error());
+	$result = $db->query('SELECT id FROM '.$db->prefix.'messages WHERE shared_id='.$id.' AND owner='.$pun_user['id'].' ORDER BY posted') or error('Unable to fetch post info', __FILE__, __LINE__, $db->error());
 	$num_posts = $db->num_rows($result);
 
 	for ($i = 0; $i < $num_posts; ++$i)
@@ -63,7 +63,7 @@ if ($pid)
 	}
 	++$i; // we started at 0
 
-	$_GET['p'] = ceil($i / $pun_user['disp_posts']);
+	$_REQUEST['p'] = ceil($i / $pun_user['disp_posts']);
 }
 
 // Replace num_replies' feature by a query :-)
