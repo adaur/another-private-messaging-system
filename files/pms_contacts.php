@@ -1,12 +1,12 @@
 <?php
 /**
- * Copyright (C)2010-2013 adaur
- * Another Private Messaging System v3.0.7
+ * Copyright (C)2010-2014 adaur
+ * Another Private Messaging System v3.0.8
  * Based on work from Vincent Garnier, Connorhd and David 'Chacmool' Djurback
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
 
-define('PUN_ROOT', './');
+define('PUN_ROOT', dirname(__FILE__).'/');
 require PUN_ROOT.'include/common.php';
 
 // No guest here !
@@ -27,6 +27,9 @@ $action = ((isset($_POST['action']) && ($_POST['action'] == 'send' || $_POST['ac
 
 if ($action != '')
 {
+	// Make sure they got here from the site
+	confirm_referrer('pms_contacts.php');
+	
 	// send a message
 	if ($action == 'send')
 	{
@@ -166,6 +169,9 @@ $result = $db->query('SELECT contact_id FROM '.$db->prefix.'contacts WHERE id IN
 // Add a contact
 if (isset($_POST['add']))
 {
+	// Make sure they got here from the site
+	confirm_referrer('pms_contacts.php');
+	
 	if (isset($_POST['req_username']))
 	{
 		$sql_where = 'u.username=\''.$db->escape($_POST['req_username']).'\'';
@@ -204,6 +210,9 @@ if (isset($_POST['add']))
 // Delete a contact
 if (isset($_GET['delete']))
 {
+	// Make sure they got here from the site
+	confirm_referrer('pms_contacts.php');
+	
 	$id = intval($_GET['delete']);
 	
 	$result = $db->query('SELECT user_id FROM '.$db->prefix.'contacts WHERE id='.$id) or error('Unable to find the contact', __FILE__, __LINE__, $db->error());
@@ -219,6 +228,9 @@ if (isset($_GET['delete']))
 // Switch contact status
 if (isset($_GET['switch']))
 {
+	// Make sure they got here from the site
+	confirm_referrer('pms_contacts.php');
+	
 	$id = intval($_GET['switch']);
 	
 	$result = $db->query('SELECT user_id FROM '.$db->prefix.'contacts WHERE id='.$id) or error('Unable to find the contact', __FILE__, __LINE__, $db->error());

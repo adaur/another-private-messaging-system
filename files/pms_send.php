@@ -1,12 +1,12 @@
 <?php
 /**
- * Copyright (C)2010-2013 adaur
- * Another Private Messaging System v3.0.7
+ * Copyright (C)2010-2014 adaur
+ * Another Private Messaging System v3.0.8
  * Based on work from Vincent Garnier, Connorhd and David 'Chacmool' Djurback
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
 
-define('PUN_ROOT', './');
+define('PUN_ROOT', dirname(__FILE__).'/');
 require PUN_ROOT.'include/common.php';
 
 // No guest here !
@@ -43,6 +43,9 @@ $errors = array();
 
 if (!empty($r) && !isset($_POST['form_sent'])) // It's a reply
 {
+	// Make sure they got here from the site
+	confirm_referrer(array('pms_send.php', 'pms_view.php'));
+	
 	$result = $db->query('SELECT DISTINCT owner, receiver FROM '.$db->prefix.'messages WHERE shared_id='.$r) or error('Unable to get the informations of the message', __FILE__, __LINE__, $db->error());
 	
 	if (!$db->num_rows($result))
@@ -100,8 +103,11 @@ if (!empty($r) && !isset($_POST['form_sent'])) // It's a reply
 }
 if (!empty($edit) && !isset($_POST['form_sent'])) // It's an edit
 {
+	// Make sure they got here from the site
+	confirm_referrer(array('pms_send.php', 'pms_view.php'));
+	
 	// Check that $edit looks good
-	if ($edit <= '0')
+	if ($edit <= 0)
 		message($lang_common['Bad request']);
 	
 	$result = $db->query('SELECT sender_id, message, receiver FROM '.$db->prefix.'messages WHERE id='.$edit) or error('Unable to get the informations of the message', __FILE__, __LINE__, $db->error());
@@ -120,6 +126,9 @@ if (!empty($edit) && !isset($_POST['form_sent'])) // It's an edit
 }
 if (isset($_POST['form_sent'])) // The post button has been pressed
 {
+	// Make sure they got here from the site
+	confirm_referrer(array('pms_send.php', 'pms_view.php'));
+	
 	$hide_smilies = isset($_POST['hide_smilies']) ? '1' : '0';
 	
 	// Make sure form_user is correct

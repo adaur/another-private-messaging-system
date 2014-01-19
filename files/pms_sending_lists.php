@@ -1,12 +1,12 @@
 <?php
 /**
- * Copyright (C)2010-2013 adaur
- * Another Private Messaging System v3.0.7
+ * Copyright (C)2010-2014 adaur
+ * Another Private Messaging System v3.0.8
  * Based on work from Vincent Garnier, Connorhd and David 'Chacmool' Djurback
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
 
-define('PUN_ROOT', './');
+define('PUN_ROOT', dirname(__FILE__).'/');
 require PUN_ROOT.'include/common.php';
 
 // No guest here !
@@ -102,6 +102,9 @@ if ($action != '')
 // Add a list
 if (isset($_POST['form_sent']))
 {
+	// Make sure they got here from the site
+	confirm_referrer('pms_sending_lists.php');
+	
 	// Build list
 	$list_name = pun_trim($_POST['list_name']);
 	$p_destinataire = isset($_POST['req_username']) ? pun_trim($_POST['req_username']) : '';

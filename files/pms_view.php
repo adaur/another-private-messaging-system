@@ -1,12 +1,12 @@
 <?php
 /**
- * Copyright (C)2010-2013 adaur
- * Another Private Messaging System v3.0.7
+ * Copyright (C)2010-2014 adaur
+ * Another Private Messaging System v3.0.8
  * Based on work from Vincent Garnier, Connorhd and David 'Chacmool' Djurback
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
 
-define('PUN_ROOT', './');
+define('PUN_ROOT', dirname(__FILE__).'/');
 require PUN_ROOT.'include/common.php';
 require PUN_ROOT.'include/parser.php';
 
@@ -78,7 +78,7 @@ $page = (!isset($_REQUEST['p']) || $_REQUEST['p'] <= '1') ? '1' : intval($_REQUE
 $start_from = $pun_user['disp_posts'] * ($page - 1);
 	
 // Check that $mid looks good
-if ($mid <= '0')
+if ($mid <= 0)
 	message($lang_common['Bad request']);
 
 // Action ?
@@ -87,6 +87,9 @@ $action = ((isset($_REQUEST['action']) && ($_REQUEST['action'] == 'delete')) ? $
 	// Delete a single message or a full topic
 	if ($action == 'delete')
 	{
+		// Make sure they got here from the site
+		confirm_referrer('pms_view.php');
+		
 		if (isset($_POST['delete_comply']))
 		{
 			if ($topic_msg > '1' || $topic_msg < '0')

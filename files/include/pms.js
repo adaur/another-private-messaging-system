@@ -1,6 +1,6 @@
 /*
- * Copyright (C)2010-2013 adaur
- * Another Private Messaging System v3.0.5
+ * Copyright (C)2010-2014 adaur
+ * Another Private Messaging System v3.0.8
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
 //<![CDATA[
