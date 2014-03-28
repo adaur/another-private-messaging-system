@@ -259,7 +259,7 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 	
 			$mail_subject = str_replace('<board_title>', $pun_config['o_board_title'], $mail_subject);
 			$mail_message = str_replace('<sender>', $pun_user['username'], $mail_message);
-			$mail_message = str_replace('<board_mailer>', $pun_config['o_board_title'].' '.$lang_common['Mailer'], $mail_message);
+			$mail_message = str_replace('<board_mailer>', sprintf($lang_common['Mailer'], $pun_config['o_board_title']), $mail_message);
 			
 			// The first row contains the subject
 			$first_crlf_full = strpos($mail_tpl_full, "\n");
@@ -271,7 +271,7 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 			$mail_subject_full = str_replace('<board_title>', $pun_config['o_board_title'], $mail_subject_full);
 			$mail_message_full = str_replace('<sender>', $pun_user['username'], $mail_message_full);
 			$mail_message_full = str_replace('<message>', $cleaned_message, $mail_message_full);
-			$mail_message_full = str_replace('<board_mailer>', $pun_config['o_board_title'].' '.$lang_common['Mailer'], $mail_message_full);
+			$mail_message_full = str_replace('<board_mailer>', sprintf($lang_common['Mailer'], $pun_config['o_board_title']), $mail_message_full);
 		}
 		if (empty($r) && empty($edit)) // It's a new message
 		{
