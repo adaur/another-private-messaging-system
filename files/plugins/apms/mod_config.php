@@ -3,7 +3,7 @@
 $mod_config = array (
   'mod_name' => 'Another Private Messaging - Topic System',
   'version' => '3.0.8',
-  'release_date' => '2014-01-19',
+  'release_date' => '2014-03-28',
   'author' => 'adaur',
   'mod_installer' => 'OK',
   'fluxbb_versions' => 

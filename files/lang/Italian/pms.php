@@ -68,6 +68,7 @@ $lang_pms = array(
 'Too many receiver'		=>	'&Egrave; permesso l\'invio contemporaneo a massimo %s destinatari.',
 'User blocked'			=>	'%s non pu&ograve; ricevere messaggi privati.',
 'User disable PM'		=>	'%s ha disabilitato l\'uso dei messaggi privati.',
+'User left'				=>	'%s ha lasciato la conversazione.',
 'Others'				=>	'Altri',
 'RE'					=>	'RE: ',
 'Shared message'		=>	'Avviare una discussione condivisa con gli utenti selezionati (devono essere pi&ugrave; di uno)',

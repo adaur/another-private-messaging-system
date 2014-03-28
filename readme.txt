@@ -4,7 +4,7 @@
 ##
 ##      Mod version:  3.0.8
 ##  Works on FluxBB:  1.5.4, 1.5.5, 1.5.6
-##     Release date:  2014-01-19
+##     Release date:  2014-03-28
 ##           Author:  adaur (adaur.underground@gmail.com)
 ##      FluxBB repo:  https://fluxbb.org/resources/mods/another-private-messaging-system
 ##      GitHub repo:  https://github.com/adaur/another-private-messaging-system

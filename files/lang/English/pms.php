@@ -68,6 +68,7 @@ $lang_pms = array(
 'Too many receiver'		=>	'You can send a message at the same time only to %s receivers maximum.',
 'User blocked'			=>	'%s refuses the private messages.',
 'User disable PM'		=>	'%s disabled the private messages.',
+'User left'				=>	'%s has left the conversation.',
 'Others'				=>	'Others',
 'RE'					=>	'RE: ',
 'Shared message'		=>	'If you have entered more than one receiver, check this box if you want to start a shared discussion (together)',

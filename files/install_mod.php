@@ -6,7 +6,7 @@
 // Some info about your mod.
 $mod_title      = 'Another Private Messaging/Topic System';
 $mod_version    = '3.0.8';
-$release_date   = '2014-01-19';
+$release_date   = '2014-03-28';
 $author         = 'adaur';
 $author_email   = 'adaur.underground@gmail.com';
 

@@ -182,6 +182,13 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 		{
 			// Begin to build the IDs' list - Thanks to Yacodo!
 			$list_ids[] = $destinataires[$i]['id'];
+			// Did the user left?
+			if (!empty($r))
+			{
+				$result = $db->query('SELECT 1 FROM '.$db->prefix.'messages WHERE shared_id='.$r.' AND show_message=1 AND owner='.$destinataires[$i]['id']) or error('Unable to get the informations of the message', __FILE__, __LINE__, $db->error());
+				if (!$db->num_rows($result))
+					$errors[] = sprintf($lang_pms['User left'], pun_htmlspecialchars($destinataire));
+			}
 			// Begin to build usernames' list
 			$list_usernames[] = $destinataires[$i]['username'];
 			// Receivers enable PM ?
@@ -431,13 +438,14 @@ $page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), $lang_pm
 
 $required_fields = array('req_message' => $lang_common['Message']);
 $focus_element = array('post');
-$focus_element[] = 'req_message';
 
 if ($r == '0' && $q == '0' && $edit == '0')
 {
 	$required_fields['req_subject'] = $lang_common['Subject'];
-	$focus_element[] = 'req_subject';
+	$focus_element[] = 'p_username';
 }
+else
+	$focus_element[] = 'req_message';
 
 $page_head['jquery'] = '<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>';
 $page_head['script'] = '<script type="text/javascript" src="include/pms.js"></script>';

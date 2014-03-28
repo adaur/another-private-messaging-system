@@ -67,6 +67,7 @@ $lang_pms = array(
 'Must receiver'			=>	'Vous devez indiquer au moins un destinataire',
 'Too many receiver'		=>	'Vous ne pouvez envoyer un message qu\'à %s destinataires maximum à la fois.',
 'User blocked'			=>	'%s refuse les messages privés.',
+'User left'				=>	'%s a quitté la conversation.',
 'User disable PM'		=>	'%s a désactivé les messages privés.',
 'Others'				=>	'Autres',
 'RE'					=>	'RE: ',
