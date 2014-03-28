@@ -139,8 +139,8 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 	if (!isset($_SESSION))
 		session_start();
 
-	if($_SESSION['last_session_request'] > time() - $pun_user['g_post_flood'])
-		$errors[] = $lang_post['Flood start'].' '.$pun_user['g_post_flood'].' '.$lang_post['flood end'];
+	if(!$edit && !isset($_POST['preview']) && $_SESSION['last_session_request'] > time() - $pun_user['g_post_flood'])
+		$errors[] = sprintf( $lang_pms['Flood'], $pun_user['g_post_flood'] );
 		
 	// Check users boxes
 	if ($pun_user['g_pm_limit'] != '0' && !$pun_user['is_admmod'] && $pun_user['num_pms'] >= $pun_user['g_pm_limit'])
@@ -149,7 +149,7 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 	// Build receivers list
 	$p_destinataire = isset($_POST['p_username']) ? pun_trim($_POST['p_username']) : '';
 	$p_contact = isset($_POST['p_contact']) ? pun_trim($_POST['p_contact']) : '';
-    $dest_list = explode(', ', $p_destinataire);
+	$dest_list = explode(', ', $p_destinataire);
 	
 	if (!in_array($pun_user['username'], $dest_list))
 		$dest_list[] = $pun_user['username'];
@@ -165,9 +165,9 @@ if (isset($_POST['form_sent'])) // The post button has been pressed
 		if ($v == '') unset($dest_list[$k]);
 	}
 
-    if (count($dest_list) < '1' && $edit == '0')
+	 if (count($dest_list) < '1' && $edit == '0')
 		$errors[] = $lang_pms['Must receiver'];
-    elseif (count($dest_list) > $pun_config['o_pms_max_receiver'])
+    	elseif (count($dest_list) > $pun_config['o_pms_max_receiver'])
 		$errors[] = sprintf($lang_pms['Too many receiver'], $pun_config['o_pms_max_receiver']-1);
 
 	$destinataires = array(); $i = '0';
