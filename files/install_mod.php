@@ -11,7 +11,7 @@ $author         = 'adaur';
 $author_email   = 'adaur.underground@gmail.com';
 
 // Versions of FluxBB this mod was created for. A warning will be displayed, if versions do not match
-$fluxbb_versions= array('1.5.4', '1.5.5', '1.5.6');
+$fluxbb_versions= array('1.5.4', '1.5.5', '1.5.6', '1.5.7', '1.5.8');
 
 // Set this to false if you haven't implemented the restore function (see below)
 $mod_restore	= true;
