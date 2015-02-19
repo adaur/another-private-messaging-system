@@ -55,7 +55,7 @@ $insert_add_file['viewtopic'] = array(
 
 $search_file['header'] = array(
   "\tif (\$pun_user['g_read_board'] == '1' && \$pun_user['g_search'] == '1')",
-  "// JavaScript tricks for IE6 and older",
+  "if (!empty(\$page_head))",
 );
 $insert_file['header'] = array(
  "\trequire PUN_ROOT.'plugins/apms/header_add1.php';\n\n",
