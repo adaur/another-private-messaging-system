@@ -93,3 +93,5 @@ Go to the plugin administration page and launch Mod Installer.
 Click on 'Change' then 'Install the Mod'.
 
 That's it! Enjoy your mod installed in 1 minute :)
+
+Join the chat at https://gitter.im/adaur/another-private-messaging-system
