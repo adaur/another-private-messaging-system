@@ -11,10 +11,10 @@ $author         = 'adaur';
 $author_email   = 'adaur.underground@gmail.com';
 
 // Versions of FluxBB this mod was created for. A warning will be displayed, if versions do not match
-$fluxbb_versions= array('1.5.8');
+$fluxbb_versions = array('1.5.9');
 
 // Set this to false if you haven't implemented the restore function (see below)
-$mod_restore	= true;
+$mod_restore=  true;
 
 // Circumvent maintenance mode
 define('PUN_TURN_OFF_MAINT', 1);
@@ -226,43 +226,42 @@ function restore()
 	global $db, $db_type, $pun_config;
 
 	$db->drop_table('messages') or error('Unable to drop table "messages"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->drop_table('contacts') or error('Unable to drop table "contacts"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->drop_table('sending_lists') or error('Unable to drop table "sending_lists"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->drop_field('groups', 'g_pm') or error('Unable to drop column "g_pm" from table "groups"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->drop_field('groups', 'g_pm_limit') or error('Unable to drop column "g_pm_limit" from table "groups"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->drop_field('users', 'use_pm') or error('Unable to drop column "use_pm" from table "users"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->drop_field('users', 'notify_pm') or error('Unable to drop column "notify_pm" from table "users"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->drop_field('users', 'num_pms') or error('Unable to drop column "num_pms" from table "users"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->drop_field('users', 'notify_pm_full') or error('Unable to drop column "num_pms" from table "users"', __FILE__, __LINE__, $db->error());
-	
+
 	$db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name=\'o_pms_enabled\'') or error('Unable to delete "o_pms_enabled" from "config"', __FILE__, __LINE__, $db->error());
-        
-    $db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name=\'o_pms_mess_per_page\'') or error('Unable to delete "o_pms_mess_per_page" from "config"', __FILE__, __LINE__, $db->error());
-        
-    $db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name=\'o_pms_max_receiver\'') or error('Unable to delete "o_pms_max_receiver" from "config"', __FILE__, __LINE__, $db->error());
-        
-    $db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name=\'o_pms_notification\'') or error('Unable to delete "o_pms_notification" from "config"', __FILE__, __LINE__, $db->error());
+
+	$db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name=\'o_pms_mess_per_page\'') or error('Unable to delete "o_pms_mess_per_page" from "config"', __FILE__, __LINE__, $db->error());
+
+	$db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name=\'o_pms_max_receiver\'') or error('Unable to delete "o_pms_max_receiver" from "config"', __FILE__, __LINE__, $db->error());
+
+	$db->query('DELETE FROM '.$db->prefix.'config WHERE conf_name=\'o_pms_notification\'') or error('Unable to delete "o_pms_notification" from "config"', __FILE__, __LINE__, $db->error());
 	
 	// Regenerate the config cache
-    if (!defined('FORUM_CACHE_FUNCTIONS_LOADED'))
-        require PUN_ROOT.'include/cache.php';
+	if (!defined('FORUM_CACHE_FUNCTIONS_LOADED'))
+		require PUN_ROOT.'include/cache.php';
 
-    generate_config_cache();
+	generate_config_cache();
 }
 
 // Make sure we are running a FluxBB version that this mod works with
 $version_warning = !in_array($pun_config['o_cur_version'], $fluxbb_versions);
 
 $style = (isset($pun_user)) ? $pun_user['style'] : $pun_config['o_default_style'];
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
@@ -284,7 +283,6 @@ if (isset($_POST['form_sent']))
 	{
 		// Run the install function (defined above)
 		install();
-
 ?>
 <div class="block">
 	<h2><span>Installation successful</span></h2>
