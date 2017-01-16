@@ -18,7 +18,7 @@ $insert_add_file['include/common'] = array(
 );
 
 $search_add_file['header'] = array(
-  "\$links[] = '<li id=\"navprofile\"'.((PUN_ACTIVE_PAGE == 'profile') ? ' class=\"isactive\"' : '').'><a href=\"profile.php?id='.\$pun_user['id'].'\">'.\$lang_common['Profile'].'</a></li>';",
+  "\$links[] = '<li id="navprofile"'.((PUN_ACTIVE_PAGE == 'profile') ? ' class="isactive"' : '').'><a href="profile.php?id='.$pun_user['id'].'">'.$lang_common['Profile'].'</a></li>';",
 );
 $insert_add_file['header'] = array(
  "\n\n\trequire PUN_ROOT.'plugins/apms/header_add2.php';\n",
